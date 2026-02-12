@@ -5,14 +5,16 @@
   "total_subjects": 5,
   "subjects": [
     {
-      "subject_id": "math_jhs1_t1",
-      "subject_name": "Mathematics",
-      "level": "JHS1",
-      "term": "Term 1",
-      "total_weeks": 12,
-      "ges_strand": "NUMBER",
-      "topics": [
-        {
+  "subject_id": "math_jhs1_t1",
+  "subject_name": "Mathematics",
+  "level": "JHS1",
+  "term": "Term 1",
+  "total_weeks": 12,
+  "ges_strand": "NUMBER, ALGEBRA, GEOMETRY & MEASUREMENTS, DATA HANDLING",
+  "topics": [
+    ...
+  ]
+}
           "topic_id": "math_jhs1_t1_w1",
           "topic_name": "Numbers and Numeration (Place Value, Large Numbers)",
           "week_number": 1,
