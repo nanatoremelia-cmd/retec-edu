@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETEC Career Explorer - Find Your Path</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --gold: #eab308;
+            --gold-dark: #ca8a04;
+            --cream: #fffbeb;
+            --white: #ffffff;
+            --gray: #64748b;
+            --gray-light: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 24px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--navy);
+        }
+
+        .logo-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .nav-btn {
+            background: var(--navy);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 100px 32px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero-highlight {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
+        }
+
+        /* Search Section */
+        .search-section {
+            padding: 80px 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .search-title {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--navy);
+        }
+
+        .search-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 48px;
+            font-size: 18px;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .search-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .search-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .search-submit {
+            background: var(--navy);
+            color: var(--white);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-submit:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .quick-picks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .quick-label {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .quick-btn {
+            padding: 8px 16px;
+            background: var(--cream);
+            border: 1px solid var(--gray-light);
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quick-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+            border-color: var(--navy);
+        }
+
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--gray-light);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Error */
+        .error {
+            display: none;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        .error h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        /* Results */
+        .results {
+            display: none;
+            padding: 80px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .career-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 60px;
+            border-radius: 20px;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .career-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .career-desc {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .career-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .subjects-title {
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
+
+        .subject-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .subject-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--cream);
+        }
+
+        .subject-num {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--navy);
+        }
+
+        .subject-name {
+            font-size: 28px;
+        }
+
+        .topic {
+            margin-bottom: 28px;
+            padding-left: 20px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .topic-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .relevance {
+            background: var(--cream);
+            color: var(--gold-dark);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .topic-text {
+            color: var(--gray);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .example-box {
+            background: var(--cream);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .example-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .example-text {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .topic-meta {
+            font-size: 13px;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Related */
+        .related {
+            margin-top: 60px;
+        }
+
+        .related-title {
+            font-size: 38px;
+            margin-bottom: 32px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .related-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .related-card h4 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .related-card p {
+            color: var(--gray);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .related-link {
+            color: var(--gold-dark);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 60px 32px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .footer-logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .footer-text {
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .search-group {
+                flex-direction: column;
+            }
+
+            .career-card {
+                padding: 40px 24px;
+            }
+
+            .subject-card {
+                padding: 24px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-wrap">
+            <div class="logo">
+                <div class="logo-icon">R</div>
+                <span class="logo-text">RETEC</span>
+            </div>
+            <a href="#search" class="nav-btn">Explore Careers</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover What to Learn for <span class="hero-highlight">Your Dream Career</span></h1>
+            <p>Enter your career interest and see exactly which subjects and topics you need to master</p>
+            <button class="hero-btn" onclick="scrollToSearch()">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Search -->
+    <section id="search" class="search-section">
+        <h2 class="search-title">Find Your Learning Path</h2>
+        <p class="search-subtitle">Search any career to see personalized curriculum recommendations</p>
+
+        <div class="search-box">
+            <label class="search-label">What career interests you?</label>
+            <div class="search-group">
+                <input 
+                    type="text" 
+                    id="careerInput" 
+                    class="search-input"
+                    placeholder="e.g., Civil Engineer, Entrepreneur, Teacher..."
+                    onkeypress="if(event.key==='Enter') search()"
+                >
+                <button class="search-submit" onclick="search()">Search</button>
+            </div>
+
+            <div class="quick-picks">
+                <span class="quick-label">Try:</span>
+                <button class="quick-btn" onclick="quickSearch('Civil Engineer')">Civil Engineer</button>
+                <button class="quick-btn" onclick="quickSearch('Entrepreneur')">Entrepreneur</button>
+                <button class="quick-btn" onclick="quickSearch('Marketer')">Marketer</button>
+                <button class="quick-btn" onclick="quickSearch('Teacher')">Teacher</button>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Searching database...</p>
+        </div>
+
+        <!-- Error -->
+        <div id="error" class="error">
+            <h3>Career Not Found</h3>
+            <p id="errorMsg"></p>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="results">
+        <div id="careerCard" class="career-card">
+            <!-- Populated by JS -->
+        </div>
+
+        <h2 class="subjects-title">Focus On These Subjects</h2>
+        <div id="subjectsList">
+            <!-- Populated by JS -->
+        </div>
+
+        <div id="relatedSection" class="related">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">RETEC AFRICA</div>
+        <p class="footer-text">Transforming education through career-led learning</p>
+        <p class="footer-text">© 2025 RETEC AFRICA</p>
+    </footer>
+
+    <script src="retec_database.js"></script>
+    <script>
+        const db = new RETECDatabase();
+        let ready = false;
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            ready = await db.initialize();
+            if (!ready) alert('Error loading database');
+        });
+
+        function scrollToSearch() {
+            document.getElementById('search').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('careerInput').focus();
+        }
+
+        function quickSearch(career) {
+            document.getElementById('careerInput').value = career;
+            search();
+        }
+
+        function search() {
+            if (!ready) {
+                alert('Please wait, database loading...');
+                return;
+            }
+
+            const input = document.getElementById('careerInput').value.trim();
+            if (!input) {
+                alert('Please enter a career');
+                return;
+            }
+
+            showLoading();
+
+            setTimeout(() => {
+                const profile = db.getCareerProfile(input);
+                if (!profile.found) {
+                    showError(profile.message);
+                } else {
+                    showResults(profile);
+                }
+            }, 500);
+        }
+
+        function showLoading() {
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('error').classList.remove('show');
+            document.getElementById('results').classList.remove('show');
+        }
+
+        function showError(msg) {
+            document.getElementById('loading').classList.remove('show');
+            document.getElementById('error').classList.add('show');
+            document.getElementById('errorMsg').textContent = msg;
+            document.getElementById('results').classList.remove('show');
+        }
+
+        function showResults(profile) {
+            document.getElementById('loading').classList.remove('show');
+            document.getElementById('error').classList.remove('show');
+            document.getElementById('results').classList.add('show');
+
+            // Career Card
+            document.getElementById('careerCard').innerHTML = `
+                <h2 class="career-title">${profile.career.career_name}</h2>
+                <p class="career-desc">${profile.career.description}</p>
+                <div class="career-stats">
+                    <div class="stat-badge">📂 ${profile.career.career_cluster}</div>
+                    <div class="stat-badge">📊 ${profile.total_relevant_topics} Topics</div>
+                    <div class="stat-badge">💰 GHS ${profile.career.salary_range_ghana.min.toLocaleString()} - ${profile.career.salary_range_ghana.max.toLocaleString()}</div>
+                </div>
+            `;
+
+            // Subjects
+            let subjectsHTML = '';
+            profile.relevant_subjects.forEach((subject, i) => {
+                subjectsHTML += `
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <div class="subject-num">${i + 1}</div>
+                            <h3 class="subject-name">${subject.subject_name}</h3>
+                        </div>
+                `;
+
+                subject.topics.forEach(topic => {
+                    subjectsHTML += `
+                        <div class="topic">
+                            <div class="topic-title">
+                                <span>${topic.topic_name}</span>
+                                <span class="relevance">${topic.relevance_score}/10</span>
+                            </div>
+                            <p class="topic-text">${topic.real_world_application}</p>
+                            <div class="example-box">
+                                <div class="example-label">💡 Example</div>
+                                <p class="example-text">${topic.example_scenario}</p>
+                            </div>
+                            <p class="topic-meta">Used for: ${topic.required_for}</p>
+                        </div>
+                    `;
+                });
+
+                subjectsHTML += '</div>';
+            });
+            document.getElementById('subjectsList').innerHTML = subjectsHTML;
+
+            // Related Careers
+            if (profile.related_careers.length > 0) {
+                let relatedHTML = `
+                    <h2 class="related-title">You Might Also Like</h2>
+                    <div class="related-grid">
+                `;
+
+                profile.related_careers.forEach(career => {
+                    relatedHTML += `
+                        <div class="related-card" onclick="quickSearch('${career.career_name}')">
+                            <h4>${career.career_name}</h4>
+                            <p>${career.description.substring(0, 100)}...</p>
+                            <span class="related-link">Explore →</span>
+                        </div>
+                    `;
+                });
+
+                relatedHTML += '</div>';
+                document.getElementById('relatedSection').innerHTML = relatedHTML;
+            }
+
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
