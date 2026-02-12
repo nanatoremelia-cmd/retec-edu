@@ -12,6 +12,14 @@
   "total_weeks": 12,
   "ges_strand": "NUMBER, ALGEBRA, GEOMETRY & MEASUREMENTS, DATA HANDLING",
   "topics": [
+    {
+      "topic_id": "math_jhs1_t1_w1",
+      ...
+    },
+    {
+      "topic_id": "math_jhs1_t1_w2",
+      ...
+    }
   ]
 }
           "topic_id": "math_jhs1_t1_w1",
