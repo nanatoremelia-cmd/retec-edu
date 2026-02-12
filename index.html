@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETEC Career Explorer - Find Your Path</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX6EMS3ZKG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      // Initialize with config
+      gtag('config', 'G-WX6EMS3ZKG', {
+        'send_page_view': true
+      });
+      
+      // Debug mode - remove this later if you want
+      console.log('📊 Google Analytics initialized with ID: G-WX6EMS3ZKG');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --gold: #eab308;
+            --gold-dark: #ca8a04;
+            --cream: #fffbeb;
+            --white: #ffffff;
+            --gray: #64748b;
+            --gray-light: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+        }
+
+        header {
+            background: var(--white);
+            padding: 24px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--navy);
+        }
+
+        .logo-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .nav-btn {
+            background: var(--navy);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 100px 32px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .hero-highlight {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
+        }
+
+        .search-section {
+            padding: 80px 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .search-title {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--navy);
+        }
+
+        .search-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 48px;
+            font-size: 18px;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .search-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .search-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .search-submit {
+            background: var(--navy);
+            color: var(--white);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-submit:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .quick-picks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .quick-label {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .quick-btn {
+            padding: 8px 16px;
+            background: var(--cream);
+            border: 1px solid var(--gray-light);
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quick-btn:hover {
+            background: var(--navy);
+            color: var(--white);
+            border-color: var(--navy);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--gray-light);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error {
+            display: none;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        .error h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .results {
+            display: none;
+            padding: 80px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .career-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 60px;
+            border-radius: 20px;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .career-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .career-desc {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .career-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .subjects-title {
+            font-size: 38px;
+            margin-bottom: 40px;
+        }
+
+        .subject-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .subject-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--cream);
+        }
+
+        .subject-num {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--navy);
+        }
+
+        .subject-name {
+            font-size: 28px;
+        }
+
+        .topic {
+            margin-bottom: 28px;
+            padding-left: 20px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .topic-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .relevance {
+            background: var(--cream);
+            color: var(--gold-dark);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .topic-text {
+            color: var(--gray);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .example-box {
+            background: var(--cream);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .example-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .example-text {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .topic-meta {
+            font-size: 13px;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .related {
+            margin-top: 60px;
+        }
+
+        .related-title {
+            font-size: 38px;
+            margin-bottom: 32px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .related-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .related-card h4 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .related-card p {
+            color: var(--gray);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .related-link {
+            color: var(--gold-dark);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Feedback Section */
+        .feedback-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            margin-top: 60px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .feedback-title {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .feedback-subtitle {
+            color: var(--gray);
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        .feedback-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .feedback-btn {
+            background: var(--cream);
+            border: 2px solid var(--gray-light);
+            padding: 16px 32px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feedback-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold);
+            background: var(--white);
+        }
+
+        .feedback-btn.selected {
+            background: var(--gold);
+            border-color: var(--gold-dark);
+            color: var(--navy);
+        }
+
+        .feedback-emoji {
+            font-size: 24px;
+        }
+
+        .comment-box {
+            display: none;
+            margin-top: 24px;
+        }
+
+        .comment-box.show {
+            display: block;
+        }
+
+        .comment-textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            min-height: 100px;
+            resize: vertical;
+            margin-bottom: 16px;
+        }
+
+        .comment-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .submit-comment-btn {
+            background: var(--navy);
+            color: var(--white);
+            padding: 12px 32px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-comment-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .feedback-thank-you {
+            display: none;
+            background: var(--cream);
+            padding: 24px;
+            border-radius: 10px;
+            color: var(--navy);
+        }
+
+        .feedback-thank-you.show {
+            display: block;
+        }
+
+        .feedback-thank-you h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Share Section */
+        .share-section {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            text-align: center;
+            border: 2px solid var(--gold);
+        }
+
+        .share-title {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .share-subtitle {
+            color: var(--gray);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .share-btn-whatsapp {
+            background: #25D366;
+        }
+
+        .share-btn-twitter {
+            background: #1DA1F2;
+        }
+
+        .share-btn-facebook {
+            background: #1877F2;
+        }
+
+        .share-btn-linkedin {
+            background: #0A66C2;
+        }
+
+        .share-btn-copy {
+            background: var(--navy);
+        }
+
+        .share-btn-copy.copied {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .share-icon {
+            font-size: 18px;
+        }
+
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 60px 32px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .footer-logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .footer-text {
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .search-group {
+                flex-direction: column;
+            }
+
+            .career-card {
+                padding: 40px 24px;
+            }
+
+            .subject-card {
+                padding: 24px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-wrap">
+            <div class="logo">
+                <div class="logo-icon">R</div>
+                <span class="logo-text">RETEC</span>
+            </div>
+            <a href="#search" class="nav-btn">Explore Careers</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover What to Learn for <span class="hero-highlight">Your Dream Career</span></h1>
+            <p>Enter your career interest and see exactly which subjects and topics you need to master</p>
+            <button class="hero-btn" onclick="scrollToSearch()">Get Started</button>
+        </div>
+    </section>
+
+    <section id="search" class="search-section">
+        <h2 class="search-title">Find Your Learning Path</h2>
+        <p class="search-subtitle">Search any career to see personalized curriculum recommendations</p>
+
+        <div class="search-box">
+            <label class="search-label">What career interests you?</label>
+            <div class="search-group">
+                <input 
+                    type="text" 
+                    id="careerInput" 
+                    class="search-input"
+                    placeholder="e.g., Civil Engineer, Entrepreneur, Teacher..."
+                    onkeypress="if(event.key==='Enter') search()"
+                >
+                <button class="search-submit" onclick="search()">Search</button>
+            </div>
+
+            <div class="quick-picks">
+                <span class="quick-label">Try:</span>
+                <button class="quick-btn" onclick="quickSearch('Civil Engineer')">Civil Engineer</button>
+                <button class="quick-btn" onclick="quickSearch('Entrepreneur')">Entrepreneur</button>
+                <button class="quick-btn" onclick="quickSearch('Marketer')">Marketer</button>
+                <button class="quick-btn" onclick="quickSearch('Teacher')">Teacher</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Searching database...</p>
+        </div>
+
+        <div id="error" class="error">
+            <h3>Career Not Found</h3>
+            <p id="errorMsg"></p>
+        </div>
+    </section>
+
+    <section id="results" class="results">
+        <div id="careerCard" class="career-card"></div>
+
+        <h2 class="subjects-title">Focus On These Subjects</h2>
+        <div id="subjectsList"></div>
+        
+        <!-- Feedback Section -->
+        <div class="feedback-section">
+            <h3 class="feedback-title">Was this helpful?</h3>
+            <p class="feedback-subtitle">Let us know what you think about this career path</p>
+            
+            <div class="feedback-buttons">
+                <button class="feedback-btn" onclick="handleFeedback('love', this)">
+                    <span class="feedback-emoji">😍</span>
+                    <span>Love it!</span>
+                </button>
+                <button class="feedback-btn" onclick="handleFeedback('helpful', this)">
+                    <span class="feedback-emoji">👍</span>
+                    <span>Helpful</span>
+                </button>
+                <button class="feedback-btn" onclick="handleFeedback('okay', this)">
+                    <span class="feedback-emoji">😐</span>
+                    <span>It's okay</span>
+                </button>
+                <button class="feedback-btn" onclick="handleFeedback('not_helpful', this)">
+                    <span class="feedback-emoji">👎</span>
+                    <span>Not helpful</span>
+                </button>
+            </div>
+
+            <div id="commentBox" class="comment-box">
+                <textarea 
+                    id="feedbackComment" 
+                    class="comment-textarea" 
+                    placeholder="Tell us more about your thoughts... (optional)"
+                ></textarea>
+                <button class="submit-comment-btn" onclick="submitComment()">Submit Feedback</button>
+            </div>
+
+            <div id="thankYou" class="feedback-thank-you">
+                <h4>🎉 Thank you for your feedback!</h4>
+                <p>Your input helps us improve the career explorer for everyone.</p>
+            </div>
+        </div>
+
+        <!-- Share Section (appears after positive feedback) -->
+        <div id="shareSection" class="share-section" style="display: none;">
+            <h3 class="share-title">💫 Love it? Share Your Discovery!</h3>
+            <p class="share-subtitle">Help others find their career path too</p>
+            <div class="share-buttons">
+                <button class="share-btn share-btn-whatsapp" onclick="shareOn('whatsapp')">
+                    <span class="share-icon">📱</span>
+                    <span>WhatsApp</span>
+                </button>
+                <button class="share-btn share-btn-twitter" onclick="shareOn('twitter')">
+                    <span class="share-icon">🐦</span>
+                    <span>Twitter</span>
+                </button>
+                <button class="share-btn share-btn-facebook" onclick="shareOn('facebook')">
+                    <span class="share-icon">👥</span>
+                    <span>Facebook</span>
+                </button>
+                <button class="share-btn share-btn-linkedin" onclick="shareOn('linkedin')">
+                    <span class="share-icon">💼</span>
+                    <span>LinkedIn</span>
+                </button>
+                <button class="share-btn share-btn-copy" id="copyBtn" onclick="copyLink()">
+                    <span class="share-icon">🔗</span>
+                    <span id="copyText">Copy Link</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="relatedSection" class="related"></div>
+    </section>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+            <div class="footer-logo">RETEC AFRICA</div>
+            <p class="footer-text">Transforming education through career-led learning</p>
+            
+            <div style="background: rgba(234, 179, 8, 0.1); padding: 20px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #eab308;">
+                <p style="font-size: 14px; line-height: 1.6; margin: 0; opacity: 0.9;">
+                    <strong>📚 RETEC is Growing:</strong> We're continuously adding more careers, subjects, and topics. 
+                    Currently covering 50+ career paths with regular updates. Missing something? 
+                    <a href="#" style="color: #eab308; text-decoration: underline;">Let us know</a>
+                </p>
+            </div>
+            
+            <p class="footer-text">© 2025 RETEC AFRICA</p>
+        </div>
+    </footer>
+
+    <script src="retec_database.js"></script>
+    <script>
+        const db = new RETECDatabase();
+        let ready = false;
+        let currentCareer = '';
+        let resultsViewStartTime = null;
+        let selectedFeedback = null;
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            ready = await db.initialize();
+            if (!ready) alert('Error loading database');
+            
+            // Debug: Check if gtag is loaded
+            console.log('🔍 Checking Google Analytics...');
+            if (typeof gtag === 'function') {
+                console.log('✅ Google Analytics (gtag) is loaded and ready!');
+            } else {
+                console.error('❌ Google Analytics (gtag) is NOT loaded!');
+                console.log('Checking in 3 seconds...');
+                setTimeout(() => {
+                    if (typeof gtag === 'function') {
+                        console.log('✅ Google Analytics loaded after delay');
+                    } else {
+                        console.error('❌ Google Analytics still not loaded - check if ad blocker is blocking it');
+                    }
+                }, 3000);
+            }
+        });
+
+        // Analytics tracking functions with enhanced debugging
+        function trackCareerSearch(careerName, searchMethod) {
+            searchMethod = searchMethod || 'manual';
+            console.log('🔍 Tracking career search:', {
+                career_name: careerName,
+                search_method: searchMethod
+            });
+            
+            if (typeof gtag === "function") {
+                gtag("event", "career_search", {
+                    'career_name': careerName,
+                    'search_method': searchMethod
+                });
+                console.log('✅ Career search event sent to GA4');
+                console.log('Parameters:', { career_name: careerName, search_method: searchMethod });
+            } else {
+                console.error('❌ gtag function not available');
+            }
+        }
+
+        function trackGetStarted() {
+            console.log('🚀 Tracking get started click');
+            if (typeof gtag === "function") {
+                gtag("event", "get_started_click", {
+                    'button_location': "hero"
+                });
+                console.log('✅ Get started event sent to GA4');
+                console.log('Parameters:', { button_location: "hero" });
+            } else {
+                console.error('❌ gtag function not available');
+            }
+        }
+
+        function trackSubjectExpand(subjectName, careerName) {
+            console.log('📚 Tracking subject view:', {
+                subject_name: subjectName,
+                career_name: careerName
+            });
+            
+            if (typeof gtag === "function") {
+                gtag("event", "subject_view", {
+                    'subject_name': subjectName,
+                    'career_name': careerName
+                });
+                console.log('✅ Subject view event sent to GA4');
+                console.log('Parameters:', { subject_name: subjectName, career_name: careerName });
+            } else {
+                console.error('❌ gtag function not available');
+            }
+        }
+
+        function trackRelatedCareerClick(originalCareer, relatedCareer) {
+            console.log('🔗 Tracking related career click:', {
+                original_career: originalCareer,
+                related_career: relatedCareer
+            });
+            
+            if (typeof gtag === "function") {
+                gtag("event", "related_career_click", {
+                    'original_career': originalCareer,
+                    'related_career': relatedCareer
+                });
+                console.log('✅ Related career event sent to GA4');
+                console.log('Parameters:', { original_career: originalCareer, related_career: relatedCareer });
+            } else {
+                console.error('❌ gtag function not available');
+            }
+        }
+
+        function trackResultsEngagement(careerName, timeSpent) {
+            console.log('⏱️ Tracking results engagement:', {
+                career_name: careerName,
+                time_spent_seconds: timeSpent
+            });
+            
+            if (typeof gtag === "function") {
+                gtag("event", "results_engagement", {
+                    'career_name': careerName,
+                    'time_spent_seconds': timeSpent
+                });
+                console.log('✅ Results engagement event sent to GA4');
+                console.log('Parameters:', { career_name: careerName, time_spent_seconds: timeSpent });
+            } else {
+                console.error('❌ gtag function not available');
+            }
+        }
+
+        function trackFeedback(careerName, feedbackType, hasComment) {
+            console.log('💬 Tracking feedback:', {
+                career_name: careerName,
+                feedback_type: feedbackType,
+                has_comment: hasComment
+            });
+            
+            if (typeof gtag === "function") {
+                gtag("event", "career_feedback", {
+                    'career_name': careerName,
+                    'feedback_type': feedbackType,
+                    'has_comment': hasComment
+                });
+                console.log('✅ Feedback event sent to GA4');
+                console.log('Parameters:', { career_name: careerName, feedback_type: feedbackType, has_comment: hasComment });
+            } else {
+                console.error('❌ gtag function not available');
+            }
+        }
+
+        function trackCommentSubmit(careerName, feedbackType, commentLength) {
+            console.log('📝 Tracking comment submit:', {
+                career_name: careerName,
+                feedback_type: feedbackType,
+                comment_length: commentLength
+            });
+            
+            if (typeof gtag === "function") {
+                gtag("event", "feedback_comment", {
+                    'career_name': careerName,
+                    'feedback_type': feedbackType,
+                    'comment_length': commentLength
+                });
+                console.log('✅ Comment event sent to GA4');
+                console.log('Parameters:', { career_name: careerName, feedback_type: feedbackType, comment_length: commentLength });
+            } else {
+                console.error('❌ gtag function not available');
+            }
+        }
+
+        function trackShare(careerName, platform) {
+            console.log('🔗 Tracking share:', {
+                career_name: careerName,
+                platform: platform
+            });
+            
+            if (typeof gtag === "function") {
+                gtag("event", "career_share", {
+                    'career_name': careerName,
+                    'platform': platform
+                });
+                console.log('✅ Share event sent to GA4');
+                console.log('Parameters:', { career_name: careerName, platform: platform });
+            } else {
+                console.error('❌ gtag function not available');
+            }
+        }
+
+        // Track scroll depth on results
+        let maxScrollDepth = 0;
+        window.addEventListener('scroll', () => {
+            if (document.getElementById('results').classList.contains('show')) {
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                if (scrollPercent > maxScrollDepth) {
+                    maxScrollDepth = Math.floor(scrollPercent / 25) * 25; // Track in 25% increments
+                    
+                    if (maxScrollDepth > 0 && typeof gtag === "function") {
+                        gtag("event", "scroll_depth", {
+                            career_name: currentCareer,
+                            depth_percent: maxScrollDepth
+                        });
+                    }
+                }
+            }
+        });
+
+        function scrollToSearch() {
+            trackGetStarted();
+            document.getElementById('search').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('careerInput').focus();
+        }
+
+        function quickSearch(career) {
+            document.getElementById('careerInput').value = career;
+            search('quick_pick');
+        }
+
+        function search(method = 'manual') {
+            if (!ready) {
+                alert('Please wait, database loading...');
+                return;
+            }
+
+            const input = document.getElementById('careerInput').value.trim();
+            if (!input) {
+                alert('Please enter a career');
+                return;
+            }
+
+            // Track time spent on previous results
+            if (resultsViewStartTime && currentCareer) {
+                const timeSpent = Math.floor((Date.now() - resultsViewStartTime) / 1000);
+                if (timeSpent > 3) { // Only track if spent more than 3 seconds
+                    trackResultsEngagement(currentCareer, timeSpent);
+                }
+            }
+
+            currentCareer = input;
+            trackCareerSearch(input, method);
+            showLoading();
+
+            setTimeout(() => {
+                const profile = db.getCareerProfile(input);
+                if (!profile.found) {
+                    showError(profile.message);
+                } else {
+                    showResults(profile);
+                    resultsViewStartTime = Date.now();
+                    maxScrollDepth = 0; // Reset scroll tracking
+                    resetFeedback(); // Reset feedback for new search
+                }
+            }, 500);
+        }
+
+        function showLoading() {
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('error').classList.remove('show');
+            document.getElementById('results').classList.remove('show');
+        }
+
+        function showError(msg) {
+            document.getElementById('loading').classList.remove('show');
+            document.getElementById('error').classList.add('show');
+            document.getElementById('errorMsg').textContent = msg;
+            document.getElementById('results').classList.remove('show');
+        }
+
+        function showResults(profile) {
+            document.getElementById('loading').classList.remove('show');
+            document.getElementById('error').classList.remove('show');
+            document.getElementById('results').classList.add('show');
+
+            // Career Card
+            document.getElementById('careerCard').innerHTML = `
+                <h2 class="career-title">${profile.career.career_name}</h2>
+                <p class="career-desc">${profile.career.description}</p>
+                <div class="career-stats">
+                    <div class="stat-badge">📂 ${profile.career.career_cluster}</div>
+                    <div class="stat-badge">📊 ${profile.total_relevant_topics} Topics</div>
+                    <div class="stat-badge">💰 GHS ${profile.career.salary_range_ghana.min.toLocaleString()} - ${profile.career.salary_range_ghana.max.toLocaleString()}</div>
+                </div>
+            `;
+
+            // Important Understanding Section - CONDENSED VERSION
+            const understandingHTML = `
+                <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); padding: 32px; border-radius: 16px; margin-bottom: 40px; border-left: 6px solid #eab308;">
+                    <h3 style="font-size: 24px; margin-bottom: 16px; color: #0f172a; display: flex; align-items: center; gap: 12px;">
+                        <span>💡</span> How to Read This Page
+                    </h3>
+                    
+                    <p style="font-size: 16px; line-height: 1.7; color: #334155; margin-bottom: 20px;">
+                        Subjects are organized by <strong>how much they matter</strong> for ${profile.career.career_name}. 
+                        <strong>All subjects are shown</strong>—just grouped to help you focus your study time wisely.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                        <div style="padding: 16px; border-radius: 10px; background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444;">
+                            <div style="font-size: 20px; margin-bottom: 4px;">🎯</div>
+                            <strong style="font-size: 14px; color: #991b1b;">CORE:</strong>
+                            <span style="font-size: 13px; color: #450a0a;"> Master these</span>
+                        </div>
+                        
+                        <div style="padding: 16px; border-radius: 10px; background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
+                            <div style="font-size: 20px; margin-bottom: 4px;">💡</div>
+                            <strong style="font-size: 14px; color: #1e3a8a;">SUPPORTING:</strong>
+                            <span style="font-size: 13px; color: #1e3a8a;"> Do well here</span>
+                        </div>
+                        
+                        <div style="padding: 16px; border-radius: 10px; background: rgba(34, 197, 94, 0.1); border-left: 4px solid #22c55e;">
+                            <div style="font-size: 20px; margin-bottom: 4px;">📚</div>
+                            <strong style="font-size: 14px; color: #14532d;">GENERAL:</strong>
+                            <span style="font-size: 13px; color: #14532d;"> Pass comfortably</span>
+                        </div>
+                    </div>
+
+                    <details style="cursor: pointer; margin-top: 16px;">
+                        <summary style="font-size: 14px; font-weight: 600; color: #0f172a; padding: 12px; background: white; border-radius: 8px; list-style: none; display: flex; align-items: center; gap: 8px;">
+                            <span style="transition: transform 0.2s;">▶</span> Why this matters & common questions
+                        </summary>
+                        <div style="padding: 20px; margin-top: 12px; background: white; border-radius: 8px; font-size: 14px; line-height: 1.7; color: #475569;">
+                            <p style="margin-bottom: 12px;">
+                                <strong>Goal:</strong> Pass ALL subjects for WASSCE, but excel where it matters most for your career path.
+                            </p>
+                            <p style="margin-bottom: 12px;">
+                                <strong>Common worry:</strong> "Won't this limit my child?"<br>
+                                <strong>Answer:</strong> No—it focuses their effort. They learn everything, but study strategically.
+                            </p>
+                            <p style="margin: 0;">
+                                <strong>Think of it like:</strong> A footballer practices football most, but still does fitness and nutrition. Focus creates excellence.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            `;
+
+            // Categorize subjects by relevance
+            const coreSubjects = [];
+            const supportingSubjects = [];
+            const generalEducation = [];
+
+            profile.relevant_subjects.forEach(subject => {
+                const avgRelevance = subject.topics.reduce((sum, topic) => sum + topic.relevance_score, 0) / subject.topics.length;
+                
+                if (avgRelevance >= 8) {
+                    coreSubjects.push(subject);
+                } else if (avgRelevance >= 5) {
+                    supportingSubjects.push(subject);
+                } else {
+                    generalEducation.push(subject);
+                }
+            });
+
+            // Build subjects HTML with three tiers
+            let subjectsHTML = understandingHTML;
+            
+            // Core Subjects Section
+            if (coreSubjects.length > 0) {
+                subjectsHTML += `
+                    <div style="margin-bottom: 50px;">
+                        <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 24px; border-radius: 12px; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 36px;">🎯</div>
+                                <div>
+                                    <h2 style="font-size: 28px; color: white; margin: 0;">CORE SUBJECTS</h2>
+                                    <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin: 4px 0 0 0;">
+                                        Essential for ${profile.career.career_name} success
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                `;
+
+                coreSubjects.forEach((subject, i) => {
+                    subjectsHTML += generateSubjectCard(subject, i + 1, 'core');
+                });
+
+                subjectsHTML += '</div>';
+            }
+
+            // Supporting Subjects Section
+            if (supportingSubjects.length > 0) {
+                subjectsHTML += `
+                    <div style="margin-bottom: 50px;">
+                        <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); padding: 24px; border-radius: 12px; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 36px;">💡</div>
+                                <div>
+                                    <h2 style="font-size: 28px; color: white; margin: 0;">SUPPORTING SUBJECTS</h2>
+                                    <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin: 4px 0 0 0;">
+                                        Important for career success
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                `;
+
+                supportingSubjects.forEach((subject, i) => {
+                    subjectsHTML += generateSubjectCard(subject, coreSubjects.length + i + 1, 'supporting');
+                });
+
+                subjectsHTML += '</div>';
+            }
+
+            // General Education Section
+            if (generalEducation.length > 0) {
+                subjectsHTML += `
+                    <div style="margin-bottom: 50px;">
+                        <div style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); padding: 24px; border-radius: 12px; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="font-size: 36px;">📚</div>
+                                <div>
+                                    <h2 style="font-size: 28px; color: white; margin: 0;">GENERAL EDUCATION</h2>
+                                    <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin: 4px 0 0 0;">
+                                        Foundation for all students
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                `;
+
+                generalEducation.forEach((subject, i) => {
+                    subjectsHTML += generateSubjectCard(subject, coreSubjects.length + supportingSubjects.length + i + 1, 'general');
+                });
+
+                subjectsHTML += '</div>';
+            }
+
+            // Add Compact FAQ Section
+            subjectsHTML += `
+                <details style="background: var(--white); padding: 32px; border-radius: 16px; margin-top: 50px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); cursor: pointer;">
+                    <summary style="font-size: 22px; font-weight: 700; color: var(--navy); list-style: none; display: flex; align-items: center; gap: 12px;">
+                        <span style="transition: transform 0.2s;">▶</span>
+                        <span>❓ Common Questions About This Approach</span>
+                    </summary>
+
+                    <div style="margin-top: 24px; display: grid; gap: 20px; padding-left: 36px;">
+                        <div>
+                            <h4 style="font-size: 16px; margin-bottom: 8px; color: #0f172a;">
+                                "Are you saying some subjects are useless?"
+                            </h4>
+                            <p style="color: #64748b; font-size: 14px; line-height: 1.6;">
+                                No. All subjects matter, just differently for different careers. RME teaches ethics (crucial for teachers), 
+                                Math is essential for engineers. Both valuable, different purposes.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 style="font-size: 16px; margin-bottom: 8px; color: #0f172a;">
+                                "Won't this limit my child?"
+                            </h4>
+                            <p style="color: #64748b; font-size: 14px; line-height: 1.6;">
+                                It focuses their effort. They learn everything but study strategically—like athletes training 
+                                hardest in their main sport while maintaining overall fitness.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 style="font-size: 16px; margin-bottom: 8px; color: #0f172a;">
+                                "What if they change career paths?"
+                            </h4>
+                            <p style="color: #64748b; font-size: 14px; line-height: 1.6;">
+                                Search the new career on RETEC and adjust focus. The foundation from all subjects 
+                                stays with them—only the emphasis shifts.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+            `;
+
+            document.getElementById('subjectsList').innerHTML = subjectsHTML;
+
+            // Related Careers (unchanged)
+            if (profile.related_careers.length > 0) {
+                let relatedHTML = `
+                    <h2 class="related-title">You Might Also Like</h2>
+                    <div class="related-grid">
+                `;
+
+                profile.related_careers.forEach(career => {
+                    relatedHTML += `
+                        <div class="related-card" onclick="handleRelatedCareerClick('${career.career_name.replace(/'/g, "\\'")}')">
+                            <h4>${career.career_name}</h4>
+                            <p>${career.description.substring(0, 100)}...</p>
+                            <span class="related-link">Explore →</span>
+                        </div>
+                    `;
+                });
+
+                relatedHTML += '</div>';
+                document.getElementById('relatedSection').innerHTML = relatedHTML;
+            }
+
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateSubjectCard(subject, num, tier) {
+            const tierColors = {
+                core: { bg: 'rgba(239, 68, 68, 0.05)', border: '#ef4444', badge: '#dc2626' },
+                supporting: { bg: 'rgba(59, 130, 246, 0.05)', border: '#3b82f6', badge: '#2563eb' },
+                general: { bg: 'rgba(34, 197, 94, 0.05)', border: '#22c55e', badge: '#16a34a' }
+            };
+
+            const colors = tierColors[tier];
+            
+            let html = `
+                <div class="subject-card" onclick="trackSubjectExpand('${subject.subject_name.replace(/'/g, "\\'")}', '${currentCareer.replace(/'/g, "\\'")}')">
+                    <div class="subject-header">
+                        <div class="subject-num">${num}</div>
+                        <h3 class="subject-name">${subject.subject_name}</h3>
+                    </div>
+            `;
+
+            subject.topics.forEach(topic => {
+                const relevanceColor = topic.relevance_score >= 8 ? '#dc2626' : 
+                                      topic.relevance_score >= 5 ? '#2563eb' : '#16a34a';
+                
+                html += `
+                    <div class="topic">
+                        <div class="topic-title">
+                            <span>${topic.topic_name}</span>
+                            <span class="relevance" style="background: ${colors.bg}; color: ${colors.badge}; border: 2px solid ${colors.border};">
+                                ${topic.relevance_score}/10
+                            </span>
+                        </div>
+                        <p class="topic-text">${topic.real_world_application}</p>
+                        <div class="example-box">
+                            <div class="example-label">💡 Example</div>
+                            <p class="example-text">${topic.example_scenario}</p>
+                        </div>
+                        <p class="topic-meta">Used for: ${topic.required_for}</p>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            return html;
+        }
+
+        function handleRelatedCareerClick(relatedCareer) {
+            trackRelatedCareerClick(currentCareer, relatedCareer);
+            quickSearch(relatedCareer);
+        }
+
+        function handleFeedback(type, button) {
+            selectedFeedback = type;
+            
+            // Remove selected class from all buttons
+            document.querySelectorAll('.feedback-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked button
+            button.classList.add('selected');
+            
+            // Show comment box
+            document.getElementById('commentBox').classList.add('show');
+            
+            // Show share section only for positive feedback
+            if (type === 'love' || type === 'helpful') {
+                setTimeout(() => {
+                    const shareSection = document.getElementById('shareSection');
+                    shareSection.style.display = 'block';
+                    // Smooth scroll to share section
+                    shareSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            } else {
+                // Hide share section for neutral/negative feedback
+                document.getElementById('shareSection').style.display = 'none';
+            }
+            
+            // Track the feedback
+            trackFeedback(currentCareer, type, false);
+        }
+
+        function submitComment() {
+            const comment = document.getElementById('feedbackComment').value.trim();
+            const hasComment = comment.length > 0;
+            
+            if (hasComment) {
+                trackCommentSubmit(currentCareer, selectedFeedback, comment.length);
+            }
+            
+            // Update tracking with comment status
+            trackFeedback(currentCareer, selectedFeedback, hasComment);
+            
+            // Show thank you message
+            document.querySelector('.feedback-buttons').style.display = 'none';
+            document.getElementById('commentBox').style.display = 'none';
+            document.getElementById('thankYou').classList.add('show');
+            document.querySelector('.feedback-subtitle').style.display = 'none';
+        }
+
+        function resetFeedback() {
+            selectedFeedback = null;
+            document.querySelectorAll('.feedback-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            document.getElementById('commentBox').classList.remove('show');
+            document.getElementById('feedbackComment').value = '';
+            document.getElementById('thankYou').classList.remove('show');
+            document.getElementById('shareSection').style.display = 'none';
+            document.querySelector('.feedback-buttons').style.display = 'flex';
+            document.querySelector('.feedback-subtitle').style.display = 'block';
+        }
+
+        function shareOn(platform) {
+            const url = window.location.href;
+            const career = currentCareer;
+            const text = `🎓 I'm exploring the ${career} career path on RETEC! Check out what subjects I need to master:`;
+            
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+                trackShare(career, platform);
+            }
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            const copyBtn = document.getElementById('copyBtn');
+            const copyText = document.getElementById('copyText');
+            
+            navigator.clipboard.writeText(url).then(() => {
+                copyBtn.classList.add('copied');
+                copyText.textContent = '✓ Copied!';
+                trackShare(currentCareer, 'copy_link');
+                
+                setTimeout(() => {
+                    copyBtn.classList.remove('copied');
+                    copyText.textContent = 'Copy Link';
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy link. Please copy manually: ' + url);
+            });
+        }
+    </script>
+</body>
+</html>
