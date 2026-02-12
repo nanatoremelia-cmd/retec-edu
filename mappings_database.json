@@ -17,6 +17,26 @@
       "required_for": "Budget estimation, quantity surveying, material ordering, cost calculations"
     },
     {
+  "topic_id": "math_data_collection",
+  "topic_name": "Data Collection",
+  "ges_sub_strand": "DATA HANDLING",
+  "learning_objectives": [
+    "Identify different types of data",
+    "Collect data from real-life situations",
+    "Organize data using simple tables"
+  ]
+},
+{
+  "topic_id": "math_data_representation",
+  "topic_name": "Data Representation",
+  "ges_sub_strand": "DATA HANDLING",
+  "learning_objectives": [
+    "Represent data using charts and graphs",
+    "Interpret information from graphs",
+    "Use data to make simple decisions"
+  ]
+}
+    {
       "mapping_id": "map_002",
       "career_id": "civil_engineer_001",
       "career_name": "Civil Engineer",
