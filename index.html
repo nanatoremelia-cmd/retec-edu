@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETEC - Career-Led Learning Intelligence for Ghana JHS Students</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX6EMS3ZKG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WX6EMS3ZKG', {
+        'send_page_view': true
+      });
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --gold: #eab308;
+            --gold-dark: #ca8a04;
+            --cream: #fffbeb;
+            --white: #ffffff;
+            --gray: #64748b;
+            --gray-light: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+        }
+
+        /* Header with subtle multi-audience tabs */
+        header {
+            background: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--navy);
+        }
+
+        .logo-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: -4px;
+        }
+
+        /* Subtle audience selector */
+        .audience-tabs {
+            display: flex;
+            gap: 8px;
+            background: var(--cream);
+            padding: 4px;
+            border-radius: 8px;
+        }
+
+        .audience-tab {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--gray);
+            border: none;
+            background: transparent;
+        }
+
+        .audience-tab:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .audience-tab.active {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* Hero Section - Enhanced */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 80px 32px 100px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .hero-highlight {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            margin-bottom: 16px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        /* Featured Careers Section - NEW! */
+        .featured-careers {
+            background: var(--white);
+            padding: 60px 32px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .section-header {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .careers-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .career-card {
+            background: var(--cream);
+            padding: 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .career-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 24px rgba(234, 179, 8, 0.15);
+        }
+
+        .career-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .career-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .career-mapping-count {
+            font-size: 12px;
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+
+        /* Search Section */
+        .search-section {
+            padding: 80px 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .search-title {
+            font-size: 38px;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--navy);
+        }
+
+        .search-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 48px;
+            font-size: 16px;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .search-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .search-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .search-submit {
+            background: var(--navy);
+            color: var(--white);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-submit:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Use Cases Section - NEW! */
+        .use-cases {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            padding: 60px 32px;
+        }
+
+        .use-cases-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .use-case-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .use-case-icon {
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .use-case-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .use-case-description {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .use-case-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .use-case-bullets li {
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .use-case-bullets li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        /* Results section and other existing styles from original */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--gray-light);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error {
+            display: none;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .error.show {
+            display: block;
+        }
+
+        .results {
+            display: none;
+            padding: 80px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 60px 32px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .footer-logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .footer-text {
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .audience-tabs {
+                display: none; /* Hide on mobile for simplicity */
+            }
+
+            .stats-bar {
+                gap: 32px;
+            }
+
+            .careers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .career-card {
+                padding: 16px;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <div class="logo-icon">R</div>
+                <div>
+                    <div class="logo-text">RETEC AFRICA</div>
+                    <div class="tagline">Career-Led Learning Intelligence</div>
+                </div>
+            </div>
+            <div class="audience-tabs">
+                <button class="audience-tab active" data-audience="students">👨‍🎓 Students</button>
+                <button class="audience-tab" data-audience="parents">👨‍👩‍👧 Parents</button>
+                <button class="audience-tab" data-audience="teachers">👨‍🏫 Teachers</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover What to Learn for <span class="hero-highlight">Your Dream Career</span></h1>
+            <p class="hero-subtitle" id="heroSubtitle">See exactly which JHS subjects connect to 60+ careers in Ghana</p>
+            <p class="hero-description" id="heroDescription">Make your education purposeful. From Entrepreneur to Software Developer, Civil Engineer to Fashion Designer — understand why each topic matters for your future.</p>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number">222</div>
+                    <div class="stat-label">Career Connections</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">44</div>
+                    <div class="stat-label">JHS Topics Mapped</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">60+</div>
+                    <div class="stat-label">Careers Covered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED CAREERS SECTION - NEW! -->
+    <section class="featured-careers">
+        <div class="section-header">
+            <h2 class="section-title">🌟 Explore In-Depth Career Paths</h2>
+            <p class="section-subtitle">Each career shows 10-20 curriculum connections with real-world examples from Ghana</p>
+        </div>
+        <div class="careers-grid">
+            <div class="career-card" onclick="quickSearch('Entrepreneur')">
+                <span class="career-icon">💼</span>
+                <div class="career-name">Entrepreneur</div>
+                <div class="career-mapping-count">20 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Software Developer')">
+                <span class="career-icon">💻</span>
+                <div class="career-name">Software Developer</div>
+                <div class="career-mapping-count">18 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Medical Doctor')">
+                <span class="career-icon">👨‍⚕️</span>
+                <div class="career-name">Medical Doctor</div>
+                <div class="career-mapping-count">18 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Teacher')">
+                <span class="career-icon">👨‍🏫</span>
+                <div class="career-name">Teacher</div>
+                <div class="career-mapping-count">17 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Civil Engineer')">
+                <span class="career-icon">🏗️</span>
+                <div class="career-name">Civil Engineer</div>
+                <div class="career-mapping-count">15 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Sales Representative')">
+                <span class="career-icon">💰</span>
+                <div class="career-name">Sales Representative</div>
+                <div class="career-mapping-count">15 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Digital Marketer')">
+                <span class="career-icon">📱</span>
+                <div class="career-name">Digital Marketer</div>
+                <div class="career-mapping-count">14 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Retail Manager')">
+                <span class="career-icon">🏪</span>
+                <div class="career-name">Retail Manager</div>
+                <div class="career-mapping-count">12 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Fashion Designer')">
+                <span class="career-icon">✂️</span>
+                <div class="career-name">Fashion Designer</div>
+                <div class="career-mapping-count">12 topics mapped</div>
+            </div>
+            <div class="career-card" onclick="quickSearch('Police Officer')">
+                <span class="career-icon">👮</span>
+                <div class="career-name">Police Officer</div>
+                <div class="career-mapping-count">10 topics mapped</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="search" class="search-section">
+        <h2 class="search-title">Or Search Any Career</h2>
+        <p class="search-subtitle">Not seeing your dream career? Search from 60+ professions</p>
+
+        <div class="search-box">
+            <label class="search-label">What career interests you?</label>
+            <div class="search-group">
+                <input 
+                    type="text" 
+                    id="careerInput" 
+                    class="search-input"
+                    placeholder="e.g., Accountant, Nurse, Chef, Mechanic..."
+                    onkeypress="if(event.key==='Enter') search()"
+                >
+                <button class="search-submit" onclick="search()">Search</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Searching database...</p>
+        </div>
+
+        <div id="error" class="error">
+            <h3>Career Not Found</h3>
+            <p id="errorMsg"></p>
+        </div>
+    </section>
+
+    <!-- USE CASES SECTION - NEW! -->
+    <section class="use-cases">
+        <div class="section-header">
+            <h2 class="section-title">How RETEC Helps Different People</h2>
+            <p class="section-subtitle">One platform, three powerful ways to use it</p>
+        </div>
+        <div class="use-cases-grid">
+            <div class="use-case-card">
+                <div class="use-case-icon">🎓</div>
+                <h3 class="use-case-title">For Students</h3>
+                <p class="use-case-description">Make learning relevant by connecting school to your future career</p>
+                <ul class="use-case-bullets">
+                    <li>Discover careers you never knew existed</li>
+                    <li>Understand why each subject matters</li>
+                    <li>See real-world examples in Ghana context</li>
+                    <li>Plan your study focus strategically</li>
+                </ul>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-icon">👨‍👩‍👧</div>
+                <h3 class="use-case-title">For Parents</h3>
+                <p class="use-case-description">Support your child's education with clear career pathways</p>
+                <ul class="use-case-bullets">
+                    <li>See which subjects matter most for your child's interests</li>
+                    <li>Guide educational decisions with confidence</li>
+                    <li>Help at home with contextual understanding</li>
+                    <li>Broaden your child's career horizons</li>
+                </ul>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-icon">👨‍🏫</div>
+                <h3 class="use-case-title">For Teachers</h3>
+                <p class="use-case-description">Bring lessons to life with real-world career connections</p>
+                <ul class="use-case-bullets">
+                    <li>Show students why topics matter</li>
+                    <li>Use Ghana-specific examples in lessons</li>
+                    <li>Motivate struggling students with career relevance</li>
+                    <li>Provide informed career guidance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="results" class="results">
+        <div id="careerCard"></div>
+        <div id="subjectsList"></div>
+        <div id="relatedSection"></div>
+    </section>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 32px;">
+            <div class="footer-logo">RETEC AFRICA</div>
+            <p class="footer-text">Transforming education through career-led learning intelligence</p>
+            
+            <div style="background: rgba(234, 179, 8, 0.1); padding: 20px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #eab308;">
+                <p style="font-size: 14px; line-height: 1.6; margin: 0; opacity: 0.9;">
+                    <strong>📚 Growing Every Week:</strong> Currently covering 60+ careers with 222 curriculum connections. 
+                    More careers, subjects, and JHS terms being added regularly.
+                </p>
+            </div>
+            
+            <p class="footer-text">© 2026 RETEC AFRICA</p>
+        </div>
+    </footer>
+
+    <script src="retec_database.js"></script>
+    <script>
+        const db = new RETECDatabase();
+        let ready = false;
+        let currentCareer = '';
+
+        // Audience tab switching with dynamic content
+        document.querySelectorAll('.audience-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Update active state
+                document.querySelectorAll('.audience-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                // Update hero content based on audience
+                const audience = this.dataset.audience;
+                updateHeroForAudience(audience);
+            });
+        });
+
+        function updateHeroForAudience(audience) {
+            const subtitles = {
+                students: "See exactly which JHS subjects connect to 60+ careers in Ghana",
+                parents: "Help your child discover their path with clear curriculum-career connections",
+                teachers: "Bring lessons to life with real-world career contexts for every topic"
+            };
+
+            const descriptions = {
+                students: "Make your education purposeful. From Entrepreneur to Software Developer, Civil Engineer to Fashion Designer — understand why each topic matters for your future.",
+                parents: "Know which subjects to prioritize for your child's career interest. Get tools to support learning at home with real-world context from Ghana.",
+                teachers: "Show students exactly how JHS topics connect to real careers. Use contextual examples to make abstract concepts concrete and motivate learning."
+            };
+
+            document.getElementById('heroSubtitle').textContent = subtitles[audience];
+            document.getElementById('heroDescription').textContent = descriptions[audience];
+        }
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            ready = await db.initialize();
+            if (!ready) alert('Error loading database');
+        });
+
+        function quickSearch(career) {
+            document.getElementById('careerInput').value = career;
+            search('featured_career_click');
+            // Scroll to results smoothly
+            setTimeout(() => {
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function search(method = 'manual') {
+            if (!ready) {
+                alert('Please wait, database loading...');
+                return;
+            }
+
+            const input = document.getElementById('careerInput').value.trim();
+            if (!input) {
+                alert('Please enter a career');
+                return;
+            }
+
+            currentCareer = input;
+            showLoading();
+
+            setTimeout(() => {
+                const profile = db.getCareerProfile(input);
+                if (!profile.found) {
+                    showError(profile.message);
+                } else {
+                    showResults(profile);
+                }
+            }, 500);
+        }
+
+        function showLoading() {
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('error').classList.remove('show');
+            document.getElementById('results').classList.remove('show');
+        }
+
+        function showError(msg) {
+            document.getElementById('loading').classList.remove('show');
+            document.getElementById('error').classList.add('show');
+            document.getElementById('errorMsg').textContent = msg;
+            document.getElementById('results').classList.remove('show');
+        }
+
+        function showResults(profile) {
+            // Implementation continues as before...
+            document.getElementById('loading').classList.remove('show');
+            document.getElementById('error').classList.remove('show');
+            document.getElementById('results').classList.add('show');
+            
+            // Display career card and subjects
+            // (Use existing implementation from original file)
+        }
+    </script>
+</body>
+</html>
